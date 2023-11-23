@@ -4,7 +4,7 @@ from rest_framework.routers import DefaultRouter
 from apps.items.views import ItemAPI
 
 
-router = DefaultRouter(trailing_slash=True)
+router = DefaultRouter(trailing_slash=False)
 router.register("items", ItemAPI, "item")
 
 urlpatterns = [
