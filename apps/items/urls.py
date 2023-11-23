@@ -1,9 +1,12 @@
 from django.urls import path
+from rest_framework.routers import DefaultRouter
 
 from apps.items.views import ItemAPI
 
 
+router = DefaultRouter(trailing_slash=True)
+router.register("items", ItemAPI, "item")
+
 urlpatterns = [
-    path('', ItemAPI.as_view(), name='create_item'),
-    path('<int:item_id>/', ItemAPI.as_view(), name='retrieve_item'),
-] 
+] + router.urls
+

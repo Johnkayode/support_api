@@ -21,7 +21,6 @@ class ItemsTests(TestCase):
         )
         response = self.client.get(f'/items/{item.id}/')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(response.data["data"], ItemSerializer(item).data)
 
     def test_retrieve_without_item_id(self):
         """

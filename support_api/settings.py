@@ -25,6 +25,9 @@ INSTALLED_APPS = [
 
     # local apps
     'apps.items',
+
+    # thirdparty apps
+    'drf_spectacular',
 ]
 
 MIDDLEWARE = [
@@ -109,3 +112,20 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# rest framework
+REST_FRAMEWORK = {
+     # Swagger/docs
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+
+# drf spectacular config
+SPECTACULAR_SETTINGS = {
+    "TITLE": config('API_PROJECT_TITLE', "Support API"),
+    "DESCRIPTION": config("API_PROJECT_DESCRIPTION", "Core APIS"),
+    "VERSION": "1.0.0",
+    "SERVE_INCLUDE_SCHEMA": False,
+    "COMPONENT_SPLIT_REQUEST": True
+    # OTHER SETTINGS
+}

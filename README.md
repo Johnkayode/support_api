@@ -7,6 +7,10 @@
 4. Run database migrations `python manage.py migrate`
 6. Run Django server `python manage.py runserver`
 
+# Documentation
+Swagger Docs 
+`/api/docs/`
+
 # Unit Tests
 Run Unit tests
 `python manage.py test apps.items.tests`
